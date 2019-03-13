@@ -24,8 +24,14 @@ public class Aluno : MonoBehaviour
     //protected internal
     //private protected
 
+    private void Start()
+    {
+        calcularMediaFinal();
+    }
+
     public void calcularMediaFinal()
     {
-
+        mediaFinal = (mediaBimestreA + mediaBimestreB + mediaBimestreC + mediaBimestreD) / 4;
+        print(mediaFinal);
     }
 }

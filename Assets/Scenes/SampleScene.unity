@@ -161,11 +161,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomeAluno: 
   idadeAluno: 0
-  isAprovado: 0
-  mediaBimestreA: 0
-  mediaBimestreB: 0
-  mediaBimestreC: 0
-  mediaBimestreD: 0
+  mediaBimestreA: 5
+  mediaBimestreB: 8
+  mediaBimestreC: 7.2
+  mediaBimestreD: 6.9
   mediaFinal: 0
 --- !u!20 &519420031
 Camera:
