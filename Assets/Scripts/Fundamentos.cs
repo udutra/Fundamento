@@ -11,7 +11,7 @@ public class Fundamentos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        EscreverDiaSemana();
     }
 
     // Update is called once per frame
@@ -65,7 +65,13 @@ public class Fundamentos : MonoBehaviour
 
     private void EscreverDiaSemana()
     {
-        switch (diaSemana){
+        EscreverDiaSemana(diaSemana);
+    }
+
+    private void EscreverDiaSemana(int d)
+    {
+        switch (d)
+        {
             case 0:
                 {
                     print("Domingo");

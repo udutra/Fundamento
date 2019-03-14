@@ -31,6 +31,14 @@ public class Aluno : MonoBehaviour
     private void Start()
     {
         CalcularMediaFinal();
+        if (VerificaAprovacaoAluno(7) == true)
+        {
+            print("Está aprovado");
+        }
+        else
+        {
+            print("Está Reprovado");
+        }
     }
 
     private void Update()
@@ -70,5 +78,21 @@ public class Aluno : MonoBehaviour
 
         }
 
+    }
+
+    public bool VerificaAprovacaoAluno(float media)
+    {
+        bool isAprovado2;
+
+        if (media >= mediaNecessaria)
+        {
+            isAprovado2 =  true;
+        }
+        else
+        {
+            isAprovado2 = false;
+        }
+
+        return isAprovado2;
     }
 }
