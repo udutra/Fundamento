@@ -5,15 +5,18 @@ using UnityEngine;
 public class Aluno : MonoBehaviour
 {
 
-    //modificador   tipo        nome;
-    public          string      nomeAluno;
-    public          int         idadeAluno;
-    private          bool       isAprovado;
-    public          float       mediaBimestreA;
-    public          float       mediaBimestreB;
-    public          float       mediaBimestreC;
-    public          float       mediaBimestreD;
-    public          float       mediaFinal;
+    //modificador       tipo        nome;
+    public              string      nomeAluno;
+    public              int         idadeAluno;
+    private             bool        isAprovado;
+    public              float       mediaBimestreA;
+    public              float       mediaBimestreB;
+    public              float       mediaBimestreC;
+    public              float       mediaBimestreD;
+    public              int         frequencia;
+    public              float       mediaNecessaria;
+    public              int         frequenciaNecessaria;
+    
 
     //Modificadores de acesso
     //public - O acesso não é restrito
@@ -27,35 +30,45 @@ public class Aluno : MonoBehaviour
 
     private void Start()
     {
-        if (mediaFinal >= 7)
-        {
-            print("A média final é maior ou igual a 7");
-        }
-        else if (mediaFinal >= 5)
-        {
-            print("A média final é maior ou igual a 5");
-        }
-        else if (mediaFinal >= 3) {
-            print("A média final é maior ou igual a 3");
-        }
-        else
-        {
-            print("A média final é menor que 3");
-        }
+        CalcularMediaFinal();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            print("Apertei a tecla Espaço");
             CalcularMediaFinal();
         }
     }
 
     public void CalcularMediaFinal()
     {
-        mediaFinal = (mediaBimestreA + mediaBimestreB + mediaBimestreC + mediaBimestreD) / 4;
-        print(mediaFinal);
+        float mediaFinal = (mediaBimestreA + mediaBimestreB + mediaBimestreC + mediaBimestreD) / 4;
+
+        if(frequencia >= frequenciaNecessaria && mediaFinal >= mediaNecessaria)
+        {
+            print("O aluno " + nomeAluno + " foi aprovado com média: " + mediaFinal + " e frequência de " + frequencia + "%");
+            isAprovado = true;
+        }
+        else
+        {
+            isAprovado = false;
+            
+            //EXERCÍCIO - INDIQUE O MOTIVO DA REPROVAÇÃO
+
+            if(frequencia < frequenciaNecessaria && mediaFinal < mediaNecessaria)
+            {
+                print("O aluno " + nomeAluno + " foi reprovado pela média: " + mediaFinal + "/" + mediaNecessaria + " e também pela frequência de " + frequencia + "%/" + frequenciaNecessaria + "%");
+            }
+            else if(mediaFinal < mediaNecessaria){
+                print("O aluno " + nomeAluno + " foi reprovado pela média: " + mediaFinal + "/" + mediaNecessaria);
+            }
+            else
+            {
+                print("O aluno " + nomeAluno + " foi reprovado pela frequência: " + frequencia + "%/" + frequenciaNecessaria + "%");
+            }
+
+        }
+
     }
 }

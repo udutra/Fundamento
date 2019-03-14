@@ -159,13 +159,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30cd7e96e614454695b037fc26b8055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeAluno: 
-  idadeAluno: 0
-  mediaBimestreA: 5
-  mediaBimestreB: 8
-  mediaBimestreC: 7.2
-  mediaBimestreD: 6.9
-  mediaFinal: 0
+  nomeAluno: Guilherme
+  idadeAluno: 28
+  mediaBimestreA: 7
+  mediaBimestreB: 7
+  mediaBimestreC: 7
+  mediaBimestreD: 7
+  frequencia: 75
+  mediaNecessaria: 7
+  frequenciaNecessaria: 75
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
