@@ -5,6 +5,7 @@ using UnityEngine;
 public class Fundamentos : MonoBehaviour
 {
     public int diaSemana; // 0 = domingo
+    public int contagem;
     public string comandos;
 
 
@@ -37,6 +38,12 @@ public class Fundamentos : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ExecutaComando();
+        }
+
+        while (contagem < 100)
+        {
+            print(contagem);
+            contagem += 1;
         }
 
     }
