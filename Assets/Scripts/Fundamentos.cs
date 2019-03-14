@@ -5,6 +5,7 @@ using UnityEngine;
 public class Fundamentos : MonoBehaviour
 {
     public int diaSemana; // 0 = domingo
+    public string comandos;
 
 
     // Start is called before the first frame update
@@ -16,10 +17,50 @@ public class Fundamentos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            comandos += "E";
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            comandos += "D";
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            comandos += "C";
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            comandos += "B";
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            EscreverDiaSemana();
+            ExecutaComando();
         }
+
+    }
+
+    private void ExecutaComando()
+    {
+        switch (comandos)
+        {
+            case "BD":
+                {
+                    print("Hadouken");
+                    break;
+                }
+            case "DBD":
+                {
+                    print("Shoryuken");
+                    break;
+                }
+            default:
+                {
+                    break;
+                }
+        }
+        comandos = "";
     }
 
     private void EscreverDiaSemana()
