@@ -46,6 +46,11 @@ public class Fundamentos : MonoBehaviour
             contagem += 1;
         }
 
+        for (int i = 0; i < 100; i++)
+        {
+            print(i);
+        }
+
     }
 
     private void ExecutaComando()
