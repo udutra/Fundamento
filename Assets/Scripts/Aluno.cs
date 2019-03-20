@@ -32,6 +32,15 @@ public class Aluno : MonoBehaviour
 
     private void Start()
     {
+        int indice = 0;
+
+        while (indice < mediaBimestral.Length)
+        {
+            print(mediaBimestral[indice]);
+            indice += 1;
+        }
+
+
         CalcularMediaFinal();
         if (VerificaAprovacaoAluno(7) == true)
         {
@@ -101,7 +110,7 @@ public class Aluno : MonoBehaviour
 
     private float MediaFinal()
     {
-        float media = (mediaBimestral[0] + mediaBimestral[1] + mediaBimestral[2] + mediaBimestral[4]) / 4;
+        float media = (mediaBimestral[0] + mediaBimestral[1] + mediaBimestral[2] + mediaBimestral[3]) / 4;
         return media;
     }
 }

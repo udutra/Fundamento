@@ -13,6 +13,16 @@ public class Fundamentos : MonoBehaviour
     void Start()
     {
         EscreverDiaSemana();
+        while (contagem < 100)
+        {
+            print(contagem);
+            contagem += 1;
+        }
+
+        for (int i = 0; i < 100; i++)
+        {
+            print(i);
+        }
     }
 
     // Update is called once per frame
@@ -40,16 +50,7 @@ public class Fundamentos : MonoBehaviour
             ExecutaComando();
         }
 
-        while (contagem < 100)
-        {
-            print(contagem);
-            contagem += 1;
-        }
-
-        for (int i = 0; i < 100; i++)
-        {
-            print(i);
-        }
+        
 
     }
 
