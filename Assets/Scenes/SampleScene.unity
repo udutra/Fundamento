@@ -162,13 +162,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomeAluno: Guilherme
   idadeAluno: 28
-  mediaBimestreA: 10
-  mediaBimestreB: 5
-  mediaBimestreC: 10
-  mediaBimestreD: 5
   frequencia: 75
   mediaNecessaria: 7
   frequenciaNecessaria: 75
+  mediaBimestral:
+  - 10
+  - 5
+  - 10
+  - 5
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -239,4 +240,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diaSemana: 4
+  contagem: 0
   comandos: 

@@ -9,13 +9,15 @@ public class Aluno : MonoBehaviour
     public              string      nomeAluno;
     public              int         idadeAluno;
     private             bool        isAprovado;
-    public              float       mediaBimestreA;
+    /*public              float       mediaBimestreA;
     public              float       mediaBimestreB;
     public              float       mediaBimestreC;
-    public              float       mediaBimestreD;
+    public              float       mediaBimestreD;*/
     public              int         frequencia;
     public              float       mediaNecessaria;
     public              int         frequenciaNecessaria;
+
+    public              float[]       mediaBimestral;
     
 
     //Modificadores de acesso
@@ -51,7 +53,8 @@ public class Aluno : MonoBehaviour
 
     public void CalcularMediaFinal()
     {
-        float mediaFinal = (mediaBimestreA + mediaBimestreB + mediaBimestreC + mediaBimestreD) / 4;
+        //float mediaFinal = (mediaBimestreA + mediaBimestreB + mediaBimestreC + mediaBimestreD) / 4;
+        float mediaFinal = MediaFinal();
 
         if(frequencia >= frequenciaNecessaria && mediaFinal >= mediaNecessaria)
         {
@@ -94,5 +97,11 @@ public class Aluno : MonoBehaviour
         }
 
         return isAprovado2;
+    }
+
+    private float MediaFinal()
+    {
+        float media = (mediaBimestral[0] + mediaBimestral[1] + mediaBimestral[2] + mediaBimestral[4]) / 4;
+        return media;
     }
 }
