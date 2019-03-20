@@ -16,8 +16,8 @@ public class Aluno : MonoBehaviour
     public              int         frequencia;
     public              float       mediaNecessaria;
     public              int         frequenciaNecessaria;
-
-    public              float[]       mediaBimestral;
+    public              int         op;
+    public              float[]     mediaBimestral;
     
 
     //Modificadores de acesso
@@ -32,21 +32,8 @@ public class Aluno : MonoBehaviour
 
     private void Start()
     {
-        int indice = 0;
+        CalcularMediaFinal(op);
 
-        while (indice < mediaBimestral.Length)
-        {
-            print(mediaBimestral[indice]);
-            indice += 1;
-        }
-
-        for (int i = 0; i < mediaBimestral.Length; i++)
-        {
-            print(mediaBimestral[i]);
-        }
-
-
-        CalcularMediaFinal();
         if (VerificaAprovacaoAluno(7) == true)
         {
             print("Está aprovado");
@@ -59,16 +46,16 @@ public class Aluno : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
-            CalcularMediaFinal();
-        }
+            CalcularMediaFinal(op);
+        }*/
     }
 
-    public void CalcularMediaFinal()
+    public void CalcularMediaFinal(int op)
     {
         //float mediaFinal = (mediaBimestreA + mediaBimestreB + mediaBimestreC + mediaBimestreD) / 4;
-        float mediaFinal = MediaFinal();
+        float mediaFinal = MediaFinal(op);
 
         if(frequencia >= frequenciaNecessaria && mediaFinal >= mediaNecessaria)
         {
@@ -113,9 +100,52 @@ public class Aluno : MonoBehaviour
         return isAprovado2;
     }
 
-    private float MediaFinal()
+    private float MediaFinal(int op)
     {
-        float media = (mediaBimestral[0] + mediaBimestral[1] + mediaBimestral[2] + mediaBimestral[3]) / 4;
-        return media;
+        int indice = 0;
+        float media = 0;
+        float mFinal = 0;
+
+
+        switch (op)
+        {
+            case 1:
+                {
+                    while (indice < mediaBimestral.Length)
+                    {
+                        media += mediaBimestral[indice];
+                        indice += 1;
+                    }
+                    break;
+                }
+            case 2:
+                {
+                    for (indice = 0; indice < mediaBimestral.Length; indice++)
+                    {
+                        media += mediaBimestral[indice];
+                    }
+                    break;
+                }
+            case 3:
+                {
+                    foreach (float item in mediaBimestral)
+                    {
+                        media += item;
+                    }
+                    break;
+                }
+            default:
+                {
+                    foreach (float item in mediaBimestral)
+                    {
+                        media += item;
+                    }
+                    break;
+                }
+        }
+
+        mFinal = media / mediaBimestral.Length;
+
+        return mFinal;
     }
 }
