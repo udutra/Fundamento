@@ -40,6 +40,11 @@ public class Aluno : MonoBehaviour
             indice += 1;
         }
 
+        for (int i = 0; i < mediaBimestral.Length; i++)
+        {
+            print(mediaBimestral[i]);
+        }
+
 
         CalcularMediaFinal();
         if (VerificaAprovacaoAluno(7) == true)
