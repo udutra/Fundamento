@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Exemplo : MonoBehaviour
 {
-    private Aluno aluno;
+    //private Aluno aluno;
 
     // Start is called before the first frame update
     void Start()
     {
-        aluno.nomeAluno = "Guilherme";
+        //aluno.nomeAluno = "Guilherme";
     }
 
     // Update is called once per frame

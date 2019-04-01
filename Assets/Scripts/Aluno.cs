@@ -8,7 +8,7 @@ public class Aluno : MonoBehaviour
     //modificador       tipo        nome;
     public              string      nomeAluno;
     public              int         idadeAluno;
-    private             bool        isAprovado;
+    //private             bool        isAprovado;
     /*public              float       mediaBimestreA;
     public              float       mediaBimestreB;
     public              float       mediaBimestreC;
@@ -60,11 +60,11 @@ public class Aluno : MonoBehaviour
         if(frequencia >= frequenciaNecessaria && mediaFinal >= mediaNecessaria)
         {
             print("O aluno " + nomeAluno + " foi aprovado com média: " + mediaFinal + " e frequência de " + frequencia + "%");
-            isAprovado = true;
+            //isAprovado = true;
         }
         else
         {
-            isAprovado = false;
+            //isAprovado = false;
             
             //EXERCÍCIO - INDIQUE O MOTIVO DA REPROVAÇÃO
 
