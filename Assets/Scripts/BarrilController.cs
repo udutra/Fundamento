@@ -12,7 +12,7 @@ public class BarrilController : MonoBehaviour
     {
         _GameController = FindObjectOfType(typeof(GameController)) as GameController;
         barrilRb = GetComponent<Rigidbody2D>();
-        barrilRb.velocity = new Vector2(_GameController.velocidadeObjeto, 0);
+        barrilRb.velocity = new Vector2(_GameController.velocidadePlataforma, 0);
     }
 
     private void Update()
@@ -30,7 +30,7 @@ public class BarrilController : MonoBehaviour
             if(transform.position.x < _GameController.posXPlayer)
             {
                 pontuado = true;
-                _GameController.Pontuar(1);
+                _GameController.Pontuar(150);
             }
         }
     }
