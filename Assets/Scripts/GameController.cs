@@ -73,8 +73,8 @@ public class GameController : MonoBehaviour
     public void Pontuar(int qtdPontos)
     {
         score += qtdPontos;
-        txtScore.text = "Score: " + score.ToString();
-        fxSource.PlayOneShot(fxPontos);
+        //txtScore.text = "Score: " + score.ToString();
+        //fxSource.PlayOneShot(fxPontos);
     }
 
     public void MudarCena(string cenaDestino)
