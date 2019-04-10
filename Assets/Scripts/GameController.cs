@@ -8,7 +8,8 @@ public class GameController : MonoBehaviour
 {
     [Header("Configuração do Personagem")]
     public float velocidadeMovimento;
-    public float limiteMaxX, limiteMinX, limiteMaxY, limiteMinY;
+    public float limiteMaxX, limiteMinX, limiteMaxY, limiteMinY, posY;
+    public int municao, municaoGranada;
 
     [Header("Configuração das Plataformas")]
     public float velocidadePlataforma;
@@ -33,16 +34,19 @@ public class GameController : MonoBehaviour
     public Text txtScore;
 
     private PlayerController _PlayerController;
+    private Personagem _AnimatorPersonagem;
 
     private void Start()
     {
         _PlayerController = FindObjectOfType(typeof(PlayerController)) as PlayerController;
+        _AnimatorPersonagem = FindObjectOfType(typeof(Personagem)) as Personagem;
         //StartCoroutine("SpawnBarril");
     }
 
     private void LateUpdate()
     {
         //posXPlayer = _PlayerController.transform.position.x;
+        posY = _AnimatorPersonagem.transform.position.y;
     }
 
     private IEnumerator SpawnBarril()
@@ -80,5 +84,15 @@ public class GameController : MonoBehaviour
     public void MudarCena(string cenaDestino)
     {
         SceneManager.LoadScene(cenaDestino);
+    }
+
+    public void GerenciarMunicao(int qtd)
+    {
+        municao += qtd; 
+    }
+
+    public void GerenciarMunicaoGranada(int qtd)
+    {
+        municaoGranada += qtd;
     }
 }

@@ -35,6 +35,7 @@ public class BunnyController : MonoBehaviour
         {
             case "Coletavel":
                 {
+                    Debug.Log("Entrou");
                     _GameController.Pontuar(10);
                     Destroy(collision.gameObject);
                     break;
